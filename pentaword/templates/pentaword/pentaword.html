@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <title>Pentaword</title>
+    <script src="{% static 'pentaword/pentaword.js' %}"></script>
+    <link rel="stylesheet" type 'text/css' href="{% static 'pentaword/pentastyle.css' %}">
+</head>
+
+<body>
+    <div class='score_overlay_wrapper' id='score_wrapper' style="visibility: hidden;">
+        <div class='score_overlay_main'>
+            <div class='score_title' id='score_title'>
+                Statistics
+            </div>
+            <div class='score_stats_main'>
+                <div class='score_word'>
+                    <div class='score_word_title'>Today's word is:</div>
+                    <div class='score_word_word' id="daily_word">{{ dailyword }}</div>
+                </div>
+                <div class='score_info'>
+                    <div class='score_info_main_stats'>
+                        <div class='score_info_tile'>
+                            <div class='score_info_value' id=playedgames>5</div>
+                            <div class='score_info_description'>Games Played</div>
+                        </div>
+                        <div class='score_info_tile'>
+                            <div class='score_info_value' id="winratio">65%</div>
+                            <div class='score_info_description'>Win Ratio</div>
+                        </div>
+                        <div class='score_info_tile'>
+                            <div class='score_info_value' id="currstreak">5</div>
+                            <div class='score_info_description'>Current Streak</div>
+                        </div>
+                        <div class='score_info_tile'>
+                            <div class='score_info_value' id="maxstreak">8</div>
+                            <div class='score_info_description'>Max Streak</div>
+                        </div>
+                    </div>
+                    <div class='score_info_additional_stats'>
+                        <div class='score_info_graphs'>
+                            <div class=score_info_graphs_title>Histogram</div>
+                            <div class='score_info_graphs_tries'>
+                                <div class='score_info_graph_try_number'>1</div>
+                                <div class='score_info_graph_column'>
+                                    <div class='score_info_graph_fill'></div>
+                                </div>
+                            </div>
+                            <div class='score_info_graphs_tries'>
+                                <div class='score_info_graph_try_number'>2</div>
+                                <div class='score_info_graph_column'>
+                                    <div class='score_info_graph_fill'></div>
+                                </div>
+                            </div>
+                            <div class='score_info_graphs_tries'>
+                                <div class='score_info_graph_try_number'>3</div>
+                                <div class='score_info_graph_column'>
+                                    <div class='score_info_graph_fill'></div>
+                                </div>
+                            </div>
+                            <div class='score_info_graphs_tries'>
+                                <div class='score_info_graph_try_number'>4</div>
+                                <div class='score_info_graph_column'>
+                                    <div class='score_info_graph_fill'></div>
+                                </div>
+                            </div>
+                            <div class='score_info_graphs_tries'>
+                                <div class='score_info_graph_try_number'>5</div>
+                                <div class='score_info_graph_column'>
+                                    <div class='score_info_graph_fill'></div>
+                                </div>
+                            </div>
+                            <div class='score_info_graphs_tries'>
+                                <div class='score_info_graph_try_number'>6</div>
+                                <div class='score_info_graph_column'>
+                                    <div class='score_info_graph_fill'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='score_info_graphs_timer'>
+                            <div class='score_info_graphs_timer_title'>Next Reset in:</div>
+                            <div class='score_info_graphs_timer_timer' id='countdown'>04:22:22</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='score_exit_button'>
+                <button type="button" class='subbutton' id='exit_stats'>Close</button>
+            </div>
+        </div>
+    </div>
+    <div class='main_window'>
+        <div class='appwindow'>
+            <div class='title'>
+                <div class='title_left'></div>
+                <div class='title_center'>PENTAWORD</div>
+                <div class='title_right' id='show_stat'>i</div>
+            </div>
+
+            <div class='letreco'>
+                <div class='letter_tries'>
+                    <div class='row_try' id=row_0>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                    </div>
+                    <div class='row_try' id=row_1>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                    </div>
+                    <div class='row_try' id=row_2>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                    </div>
+                    <div class='row_try' id=row_3>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                    </div>
+                    <div class='row_try' id=row_4>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                    </div>
+                    <div class='row_try' id=row_5>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                        <div class='char'></div>
+                    </div>
+                </div>
+                <div class='submit_buttons'>
+                    <button type="button" class='subbutton' id='del_elem'>Back</button>
+                    <button type="button" class='subbutton' id='sub_elem'>Try</button>
+                </div>
+
+                <div class='keywrapper'>
+                    <div class='key_row'>
+                        <button type="button" class='keybutton' id=key_0>Q</button>
+                        <button type="button" class='keybutton' id=key_1>W</button>
+                        <button type="button" class='keybutton' id=key_2>E</button>
+                        <button type="button" class='keybutton' id=key_3>R</button>
+                        <button type="button" class='keybutton' id=key_4>T</button>
+                        <button type="button" class='keybutton' id=key_5>Y</button>
+                        <button type="button" class='keybutton' id=key_6>U</button>
+                        <button type="button" class='keybutton' id=key_7>I</button>
+                        <button type="button" class='keybutton' id=key_8>O</button>
+                        <button type="button" class='keybutton' id=key_9>P</button>
+                    </div>
+                    <div class='key_row'>
+                        <button type="button" class='keybutton' id=key_10>A</button>
+                        <button type="button" class='keybutton' id=key_11>S</button>
+                        <button type="button" class='keybutton' id=key_12>D</button>
+                        <button type="button" class='keybutton' id=key_13>F</button>
+                        <button type="button" class='keybutton' id=key_14>G</button>
+                        <button type="button" class='keybutton' id=key_15>H</button>
+                        <button type="button" class='keybutton' id=key_16>J</button>
+                        <button type="button" class='keybutton' id=key_17>K</button>
+                        <button type="button" class='keybutton' id=key_18>L</button>
+                    </div>
+                    <div class='key_row'>
+                        <button type="button" class='keybutton' id=key_19>Z</button>
+                        <button type="button" class='keybutton' id=key_20>X</button>
+                        <button type="button" class='keybutton' id=key_21>C</button>
+                        <button type="button" class='keybutton' id=key_22>V</button>
+                        <button type="button" class='keybutton' id=key_23>B</button>
+                        <button type="button" class='keybutton' id=key_24>N</button>
+                        <button type="button" class='keybutton' id=key_25>M</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

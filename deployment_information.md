@@ -91,6 +91,16 @@ Que diz pra olhar primeiro no 'staticfiles' e depois no 'static' buscando os arq
 
 o push SO VAI se vc criar o app dentro da pasta que vc deu clone e der push de lá
 
+## Migrar as coisas
+- heroku run python manage.py migrate
+
+## ADD env vars (ex, django screte key) no app
+
+
+Quando acordar, testar 2 coisas
+- Tirar db.sqlite3 do gitignore e dar deploy pra ver se o heroku lê
+- Se não, tentar colocar postree no projeto
+
 
 
 

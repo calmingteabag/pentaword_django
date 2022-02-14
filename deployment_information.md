@@ -54,6 +54,8 @@ Depois em `settings.py`:
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'`
 
+Add `'whitenoise.middleware.WhiteNoiseMiddleware',` em settings.py na parte `MIDDLEWARE = [ ]`
+
 - Git não lê por default esses arquivos, vc tem que especificar em um arquivo chamado `MANIFEST.in` o que
 é pra ele pegar (templates, scripts, gato, cachorro, etc). Então nele vai isso:
 
@@ -100,6 +102,8 @@ o push SO VAI se vc criar o app dentro da pasta que vc deu clone e der push de l
 Quando acordar, testar 2 coisas
 - Tirar db.sqlite3 do gitignore e dar deploy pra ver se o heroku lê
 - Se não, tentar colocar postree no projeto
+
+#
 
 
 

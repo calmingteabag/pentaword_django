@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pentaword'
+    'pentaword',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +126,15 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# SESSION_COOKIE_SECURE = True
+
+# CSRF_COOKIE_SECURE = True
+
+# SECURE_SSL_REDIRECT = True
+
+# SECURE_HSTS_SECONDS = 300
+
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# SECURE_HSTS_PRELOAD = True

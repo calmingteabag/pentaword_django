@@ -1,4 +1,4 @@
-# Versão 'deployavel' do pentaword
+# Versão 'deployavel' do pentaword AINDA não funcional
 
 ## Corrigidos alguns detalhes em relação à versão 'beta':
 

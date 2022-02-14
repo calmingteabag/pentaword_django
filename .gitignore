@@ -1,7 +1,5 @@
-Include/
-Lib/
-Scripts/
-__pycache__
-__init__.py
 db.sqlite3
 migrations/
+Scripts/
+Lib/
+develop_information.md

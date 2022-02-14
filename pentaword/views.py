@@ -5,8 +5,8 @@ import random
 import datetime
 import time
 import schedule
-
-daily_word = ''
+from pentaword.models import Word
+from django.views.generic import View
 
 
 def get_word():
@@ -57,21 +57,21 @@ def replacer(word):
     return newword
 
 
-def word_scheduler():
-    global daily_word
-    daily_word = replacer(get_word())
+class ViewWord(View):
 
-    schedule.every().day.at("00:01").do(word_scheduler)
+    def get(self, request):
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+        word_obj = Word.objects.get(pk=1)
+        daily_word = word_obj
+        # What it is doing is getting the single entry (primary key = 1) that contains
+        # our daily word.
 
+        contextstuff = {'dailyword': daily_word}
+        return render(request, 'pentaword\pentaword.html', contextstuff)
 
-def index(request):
-    # on page calling do this, okay, but we get AGAIN into the problem of
-    # script being run on the exact interval to change word.
-    daily_word = 'Teste'
-    contextstuff = {'dailyword': daily_word}
+#### ON ANOTHER FUNCTION THAT WILL RUN A TASK: ####
+        # run getrun() and replacer()
 
-    return render(request, 'pentaword\pentaword.html', contextstuff)
+        # newword = Word.objects.get(pk=1)
+        # newword.dailyword = ### returned webscrapped word goes here ###
+        # newword.save()

@@ -1,7 +1,12 @@
 from __future__ import absolute_import
 import os
+import random
+import requests
+from pentaword.models import Word
+from bs4 import BeautifulSoup
 from celery import Celery
 from celery.schedules import crontab
+
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pentaword.settings')
 app = Celery('pentaword')

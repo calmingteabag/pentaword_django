@@ -25,6 +25,187 @@ div.main_window {
         height: 100%;
     }
 }
+div.help_overlay_wrapper {
+    height: 70vh;
+    width: 50vw;
+    position: fixed;
+    z-index: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(151, 56, 159);
+    column-gap: 2vw;
+    background-color: rgb(39, 39, 39);
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_overlay_wrapper {
+        width: 95vw;
+    }
+}
+
+div.score_overlay_main { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+div.help_title {
+    display: flex;
+    height: 10%;
+    padding: 0px;
+    margin: 0px;
+    border:0px;
+    color:rgb(255, 42, 184);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing:0.1vw;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.6vw;   
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_title {
+        font-size: 8vw;
+        letter-spacing: 0.5vw;
+    }
+}
+
+div.help_stats_main {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    color: white;
+}
+
+div.help_exit_button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    padding: 1.5vw;
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_exit_button {
+        padding-bottom: 2vw;
+    }
+}
+div.help_info {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    font-size: 0.9vw;
+    gap: 0.2vw;
+}
+@media only screen and (max-width: 900px) {
+    div.help_info {
+        display:flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+        font-size: 4vw;
+        gap: 1.5vw;
+        padding-top:2vw;
+        padding-bottom: 2vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}
+div.help_examples {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
+    gap:0.2vw;
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_examples {
+        gap: 1.5vw;
+    }
+}
+
+div.help_row_try {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+@media only screen and (max-width: 900px) {
+    div.help_row_try {
+        gap: 1.5vw;
+    }
+}
+
+div.help_description {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    gap: 0.5vw;
+    font-size: 1vw;
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_description {
+        font-size: 4.3vw;
+    }
+}
+
+div.help_char {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 5%;
+    border-width: 2px;
+    border-color: rgba(186, 89, 255, 0.257);
+    width: 2.6vw;
+    height: 2.6vw;
+    font-size: 2vw;
+    color:rgb(255, 102, 229);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_char {
+        width: 8vw;
+        height:8vw;
+        font-size: 6vw;
+    }
+}
+
+div.help_credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 0.9vw;
+    padding-left:1vw;
+    padding-right:1vw;
+}
+
+@media only screen and (max-width: 900px) {
+    div.help_credits {
+        font-size: 4.3vw;
+        padding-left:5vw;
+        padding-right:5vw;
+    }
+}
+
+
 div.score_overlay_wrapper {
     height: 70vh;
     width: 50vw;
@@ -348,11 +529,23 @@ div.title_center {
 
 div.title_left {
     display: flex;
-    justify-content: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    justify-content: left;
     align-items: center;
+    font-size: 2.5vw;
     width: 20%;
 }
 
+div.title_left:hover {
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 900px) {
+    div.title_left {
+        font-size:7vw;
+    }
+}
 
 
 div.title_right {
@@ -367,7 +560,6 @@ div.title_right {
 div.title_right:hover {
     cursor: pointer;
     color: white;
-
 }
 
 @media only screen and (max-width: 900px) {
@@ -571,4 +763,12 @@ button.keybutton:hover {
     background-color: rgb(200, 0, 143);
     color: white;
     cursor: pointer;
+}
+
+a.infocredits {
+    color:rgb(255, 42, 184);
+}
+
+#daily_word {
+    content-visibility: hidden ;
 }

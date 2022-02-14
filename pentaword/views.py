@@ -2,14 +2,19 @@ from django.shortcuts import render
 from bs4 import BeautifulSoup
 import requests
 import random
+import datetime
+import time
+import schedule
+
+daily_word = ''
 
 
-def get_character():
+def get_word():
     query_elements = ''
 
     htmlpage = requests.get(
         "https://www.dicio.com.br/palavras-com-cinco-letras/")
-    bshandler = BeautifulSoup(htmlpage.content)
+    bshandler = BeautifulSoup(htmlpage.content, features="html.parser")
 
     bs_query = bshandler.find_all('p')
 
@@ -52,8 +57,21 @@ def replacer(word):
     return newword
 
 
+def word_scheduler():
+    global daily_word
+    daily_word = replacer(get_word())
+
+    schedule.every().day.at("00:01").do(word_scheduler)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+
 def index(request):
-    dailyword = replacer(get_character())
-    contextstuff = {'dailyword': dailyword}
+    # on page calling do this, okay, but we get AGAIN into the problem of
+    # script being run on the exact interval to change word.
+    daily_word = 'Teste'
+    contextstuff = {'dailyword': daily_word}
 
     return render(request, 'pentaword\pentaword.html', contextstuff)

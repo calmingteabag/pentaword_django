@@ -5,15 +5,77 @@
     {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-
     <title>Pentaword</title>
     <script src="{% static 'pentaword/pentaword.js' %}"></script>
     <link rel="stylesheet" type 'text/css' href="{% static 'pentaword/pentastyle.css' %}">
 </head>
 
 <body>
+    <!-- Help Wrapper -->
+    <div class='help_overlay_wrapper' id='help_wrapper' style="visibility: hidden;">
+        <div class='help_overlay_main'>
+            <div class='help_title' id='help_title'>Help</div>
+            <div class='help_stats_main'>
+                <div class='help_info'>
+                    <span>Guess the word in six tries.</span>
+                    <span>After hitting 'Try' or 'Enter' on keyboard, colors will change.</span>
+                    <span>Each colors shows how close the letter is from being right.</span>
+                </div>
+
+                <div class="help_examples">
+                    <div class='help_row_try' id=row_0>
+                        <div class='help_char'>C</div>
+                        <div class='help_char'>H</div>
+                        <div class='help_char' style="color: #00FF00; border-color:green">U</div>
+                        <div class='help_char'>V</div>
+                        <div class='help_char'>A</div>
+                    </div>
+                    <div class="help_description">
+                        Letter exists and is in the right position.
+                    </div>
+                    <div class='help_row_try' id=row_0>
+                        <div class='help_char'>F</div>
+                        <div class='help_char'>E</div>
+                        <div class='help_char' style="color: yellow; border-color:#FFFF00">L</div>
+                        <div class='help_char'>I</div>
+                        <div class='help_char'>Z</div>
+                    </div>
+                    <div class="help_description">
+                        <span>Letter exists but is in the wrong position.</span>
+                    </div>
+                    <div class='help_row_try' id=row_0>
+                        <div class='help_char'>C</div>
+                        <div class='help_char'>O</div>
+                        <div class='help_char' style="color: RED; border-color:#FF0000">F</div>
+                        <div class='help_char'>R</div>
+                        <div class='help_char'>E</div>
+                    </div>
+                    <div class="help_description">
+                        Letter doesn't exists.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='help_credits'>
+            <span>Created by
+                <a class='infocredits' href="https://github.com/calmingteabag">calmingteabag</a> for <b>LEARNING</b>
+                purposes, all credits
+                goes to
+                original creators.
+            </span></br>
+            <span> Tecnologies used: <a class='infocredits' href="https://www.djangoproject.com/">Django</a>, <a
+                    class='infocredits' href="https://www.heroku.com/">Heroku</a>, Python and Vanilla
+                Javascript.
+
+            </span>
+
+
+        </div>
+        <div class='help_exit_button'>
+            <button type="button" class='subbutton' id='btn_exit_help'>Close</button>
+        </div>
+    </div>
+    <!-- Score Wrapper -->
     <div class='score_overlay_wrapper' id='score_wrapper' style="visibility: hidden;">
         <div class='score_overlay_main'>
             <div class='score_title' id='score_title'>
@@ -95,10 +157,11 @@
             </div>
         </div>
     </div>
+    <!-- Main Page Content -->
     <div class='main_window'>
         <div class='appwindow'>
             <div class='title'>
-                <div class='title_left'></div>
+                <div class='title_left' id='show_help'>?</div>
                 <div class='title_center'>PENTAWORD</div>
                 <div class='title_right' id='show_stat'>i</div>
             </div>

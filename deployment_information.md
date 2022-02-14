@@ -83,7 +83,13 @@ STATICFILES_DIRS = (
 
 Que diz pra olhar primeiro no 'staticfiles' e depois no 'static' buscando os arquivos.
 
+## Deploy no heroku (NESSA ordem)
+- git clone repositorio
+- cd repositorio
+- heroku create nomedoapp
+- git push heroku master
 
+o push SO VAI se vc criar o app dentro da pasta que vc deu clone e der push de lá
 
 
 

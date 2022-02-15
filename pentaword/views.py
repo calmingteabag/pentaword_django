@@ -12,7 +12,7 @@ class ViewWord(View):
         self.currDay = int(self.time.strftime("%d"))
         self.currMonth = int(self.time.strftime("%m"))
         self.currYear = int(self.time.strftime("%Y"))
-        self.file = static('wordlist_pt.txt')
+        self.url = static('wordlist_pt.txt')
 
     def leapYear(self, year):
         if (year % 100 != 0) and (year % 4 == 0):
@@ -37,7 +37,7 @@ class ViewWord(View):
             return False
 
     def rand_word(self):
-        with open(file=self.file) as text:
+        with open(self.url) as text:
             rand_index = random.randint(0, len(text) - 1)
             word_rand = text[rand_index]
 

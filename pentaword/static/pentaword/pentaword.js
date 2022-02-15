@@ -491,28 +491,29 @@ function checkWord() {
     for (let char of arr) {
 
         if (daily_word_arr.includes(char) && char == daily_word_arr[check_pos]) {
-            let current_letter = check_row.children[check_pos];
+            let letterDomElement = check_row.children[check_pos];
             // need to color specific letter on screen keyboard.
             // how tf i get it
-            current_letter.style.color = 'green';
-            current_letter.style.borderColor = '#00FF00';
+
+            letterDomElement.style.color = 'green';
+            letterDomElement.style.borderColor = '#00FF00';
             // would be nice if this effect worked only on current row
             // will think about it later
-            current_letter.style.animation = 'glow_lighten 1.5s ease-in-out infinite alternate'
+            letterDomElement.style.animation = 'glow_lighten 1.5s ease-in-out infinite alternate'
             check_pos++
 
         } else if (daily_word_arr.includes(char) && char != daily_word_arr[check_pos]) {
-            let current_letter = check_row.children[check_pos];
+            let letterDomElement = check_row.children[check_pos];
 
-            current_letter.style.color = 'yellow'
-            current_letter.style.borderColor = '#FFFF00';
+            letterDomElement.style.color = 'yellow'
+            letterDomElement.style.borderColor = '#FFFF00';
             check_pos++
 
         } else {
-            let current_letter = check_row.children[check_pos];
+            let letterDomElement = check_row.children[check_pos];
 
-            current_letter.style.color = 'red'
-            current_letter.style.borderColor = '#FF0000';
+            letterDomElement.style.color = 'red'
+            letterDomElement.style.borderColor = '#FF0000';
             check_pos++
 
         }

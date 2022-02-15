@@ -77,3 +77,7 @@ def update_daily_word():
     new_word = Word.objects.get(pk=1)
     new_word.dailyword = replacer_word
     new_word.save()
+
+
+if __name__ == '__main__':
+    app.start()

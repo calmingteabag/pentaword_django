@@ -12,7 +12,7 @@ class ViewWord(View):
         self.currDay = int(self.time.strftime("%d"))
         self.currMonth = int(self.time.strftime("%m"))
         self.currYear = int(self.time.strftime("%Y"))
-        self.file = static('static/wordlist_pt.txt')
+        self.file = static('wordlist_pt.txt')
 
     def leapYear(self, year):
         if (year % 100 != 0) and (year % 4 == 0):

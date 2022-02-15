@@ -8,7 +8,7 @@ Se alguem tem a intenção de fazer isso, se prepare, pois mexer com static file
 - Cuidado com `\` e `/`. Web & Bash = `/`, Windows = `\`
 - Olhe se seu app está em INSTALLED APPS. 
 
-Ainda preciso entender melhor como funciona `os.path`. Não cheguei a olhar essa parte quando mexi com django, depois dessa sofrencia é uma boa hora pra dar uma olhada.
+Ainda preciso entender melhor como funciona `os.path`. Não cheguei a olhar essa parte quando mexi com django, depois dessa sofrencia é uma boa hora pra dar uma olhada. E deveria decidir de vez se documento em portugues ou ingles, misturar os dois ta ficando complicado.
 
 
 

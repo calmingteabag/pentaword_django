@@ -1,4 +1,4 @@
-import schedule
+import pentaword.schedule as schedule
 import time
 
 import random

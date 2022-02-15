@@ -14,12 +14,14 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.update(BROKER_URL=os.environ['REDIS_URL'],
                 CELERY_RESULT_BACKEND=os.environ['REDIS_URL'])
 
+app.autodiscover_tasks()
+
 
 @app.on_after_configure.connect
-def setup_periodic_tasks(sender):
+def setup_periodic_tasks(sender, **kwargs):
     sender.add_periodic_task(
-        crontab(hour=0, minute=0),
-        update_daily_word.s,
+        crontab(minute='*/5'),
+        update_daily_word(),
     )
 
 

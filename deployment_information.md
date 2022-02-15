@@ -103,8 +103,26 @@ Quando acordar, testar 2 coisas
 - Tirar db.sqlite3 do gitignore e dar deploy pra ver se o heroku lê
 - Se não, tentar colocar postree no projeto
 
-#
+# Templates não carregando
 
+- se vc tem
+`projeto\app\templates\index.html` ele não vai conseguir ler
+a estrutura tem que ser `projeto\app\templates\app\index.html` - sim, com app duas vezes nesse caminho esquisito
+- Uma solução é fazer uma pasta chamada `templates` no root do projeto e dentro dele, e dentro templates por app:
+`projeto\templates\app1\index.html`
+`projeto\templates\app2\index2.html`
+`projeto\templates\app3\inde3.html`
+
+E depois ir em `settings.py` e:
+
+`TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'), <=== Add essa linha
+        ],
+    },
+]`
 
 
 

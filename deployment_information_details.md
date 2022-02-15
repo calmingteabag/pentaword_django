@@ -115,7 +115,7 @@ Em settings.py:
     },
 ]`
 
-- CUIDADO COM "\" E "/"
+- CUIDADO COM `\` E  `/`
 diretorios no windows:
 `c:\folder\cat.jpg`
 diretorios na web:

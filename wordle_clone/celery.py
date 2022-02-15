@@ -19,7 +19,7 @@ app.conf.update(BROKER_URL=os.environ['REDIS_URL'],
 def setup_periodic_tasks(sender):
     sender.add_periodic_task(
         crontab(hour=0, minute=0),
-        update_daily_word.s,
+        update_daily_word(),
     )
 
 

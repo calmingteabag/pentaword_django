@@ -72,15 +72,14 @@ statics. Ai quando mandar push, ele vai acusar erro dizendo que algo não existe
 
 No `settings.py`:
 
-`STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+`STATIC_ROOT = os.path.join(BASE_DIR, 'static/')` é a base onde o django vai procurar os arquivos.
+Se o caminho completo até o css for
+`projeto/meuapp/static/meuapp/arquivocss.css` , colocando assim ele vai procurar a pasta static e ir atras da continuação, por isso o
+`/`. Se vc parar a busca em `'static'` vai dar erro pq ele vai parar a busca sem olhar as subpastas.
 
-STATIC_URL = '/static/'
+`STATICFILES_DIRS` é o lugar extra onde ele vai procurar pelos statics só lembre
+`'folder'` ele para a busca ali. `folder/` ele vai atras do resto
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)`
-
-Que diz pra olhar primeiro no 'staticfiles' e depois no 'static' buscando os arquivos.
 
 ## Deploy no heroku (NESSA ordem)
 - git clone repositorio
@@ -105,18 +104,13 @@ Quando acordar, testar 2 coisas
 - se vc tem
 `projeto\app\templates\index.html` ele não vai conseguir ler
 a estrutura tem que ser `projeto\app\templates\app\index.html` - sim, com app duas vezes nesse caminho esquisito
-- Uma solução é fazer uma pasta chamada `templates` no root do projeto e dentro dele, e dentro templates por app:
-`projeto\templates\app1\index.html`
-`projeto\templates\app2\index2.html`
-`projeto\templates\app3\inde3.html`
 
-E depois ir em `settings.py` e:
-
+Em settings.py:
 `TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'), <=== Add essa linha
+            os.path.join(BASE_DIR, 'templates/'), <=== Add essa linha
         ],
     },
 ]`

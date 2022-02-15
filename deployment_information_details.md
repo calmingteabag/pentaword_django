@@ -50,10 +50,10 @@ Depois em `settings.py`:
 
 `MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
     ...
     ...`
-
+O whitenoise tem que ser a segunda opção
 E depois:
 
 `STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'`
@@ -115,7 +115,7 @@ Em settings.py:
     },
 ]`
 
-- CUIDADO COM "\" E "/"
+- CUIDADO COM `\` E  `/`
 diretorios no windows:
 `c:\folder\cat.jpg`
 diretorios na web:

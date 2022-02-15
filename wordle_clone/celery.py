@@ -20,7 +20,7 @@ app.autodiscover_tasks()
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
     sender.add_periodic_task(
-        crontab(minute='*/1'),
+        crontab(hour=0, minute=0),
         update_daily_word(),
     )
 

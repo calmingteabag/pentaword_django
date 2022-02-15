@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import View
 from pentaword.models import Word
+import random
+import english_words
 
 
 class ViewWord(View):

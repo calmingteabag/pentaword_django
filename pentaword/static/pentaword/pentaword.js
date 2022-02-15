@@ -68,9 +68,11 @@ async function startCheck() {
 
         if ((currDate.getDate() == localStorage.getItem('nextday')) && isLastMonthDay(currDay) == false) {
             resolve(localStorage.setItem('game_state', 'active'))
+            resolve(localStorage.setItem('last_game_state', ''))
             resolve(localStorage.setItem('nextday', currDay++)) // needs rewrite to account for last day of the month and leap years
         } else if ((currDate.getDate() == localStorage.getItem('nextday')) && isLastMonthDay(currDay) == true) {
             resolve(localStorage.setItem('game_state', 'active'))
+            resolve(localStorage.setItem('last_game_state', ''))
             resolve(localStorage.setItem('nextday', currDay = 0))
         }
     });
@@ -484,14 +486,14 @@ function checkWord() {
 
     let check_pos = 0
     let daily_word_arr = word.toUpperCase().split('')
+    let check_row = document.getElementsByClassName('row_try')[active_row]
 
     for (let char of arr) {
 
         if (daily_word_arr.includes(char) && char == daily_word_arr[check_pos]) {
-            let check_row = document.getElementsByClassName('row_try')[active_row]
             let current_letter = check_row.children[check_pos];
-
-
+            // need to color specific letter on screen keyboard.
+            // how tf i get it
             current_letter.style.color = 'green';
             current_letter.style.borderColor = '#00FF00';
             // would be nice if this effect worked only on current row
@@ -500,7 +502,6 @@ function checkWord() {
             check_pos++
 
         } else if (daily_word_arr.includes(char) && char != daily_word_arr[check_pos]) {
-            let check_row = document.getElementsByClassName('row_try')[active_row]
             let current_letter = check_row.children[check_pos];
 
             current_letter.style.color = 'yellow'
@@ -508,7 +509,6 @@ function checkWord() {
             check_pos++
 
         } else {
-            let check_row = document.getElementsByClassName('row_try')[active_row]
             let current_letter = check_row.children[check_pos];
 
             current_letter.style.color = 'red'

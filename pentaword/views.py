@@ -27,7 +27,7 @@ class ViewWord(View):
 
         if (day) == 31:
             return True
-        elif (evenmonth.includes(month) == True and day == 30):
+        elif (month in evenmonth == True and day == 30):
             return True
         elif ((self.leapYear(year) == False) and (month == 2) and (day == 28)):
             return True

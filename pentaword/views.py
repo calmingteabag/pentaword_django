@@ -12,4 +12,4 @@ class ViewWord(View):
         daily_word = word_obj
 
         contextstuff = {'dailyword': daily_word}
-        return render(request, 'pentaword\pentaword.html', contextstuff)
+        return render(request, 'pentaword/pentaword.html', contextstuff)

@@ -48,13 +48,16 @@ FUCKING HELL. Sério, HELL.
 Primeiro `pip install whitenoise` e depois passar pro requirements
 Depois em `settings.py`:
 
-`MIDDLEWARE_CLASSES = (
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-)
+`MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    ...
+    ...`
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'`
+E depois:
 
-Add `'whitenoise.middleware.WhiteNoiseMiddleware',` em settings.py na parte `MIDDLEWARE = [ ]`
+`STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'`
+
 
 - Git não lê por default esses arquivos, vc tem que especificar em um arquivo chamado `MANIFEST.in` o que
 é pra ele pegar (templates, scripts, gato, cachorro, etc). Então nele vai isso:
@@ -68,12 +71,6 @@ Outro inferno na terra. Se vc esquecer de mandar o git ler os statics, o reposit
 statics. Ai quando mandar push, ele vai acusar erro dizendo que algo não existe.
 
 No `settings.py`:
-
-`STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATIC_URL = '/static/'`
-
-Alguns lugares falam para fazer assim:
 
 `STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -124,6 +121,18 @@ E depois ir em `settings.py` e:
     },
 ]`
 
+- CUIDADO COM "\" E "/"
+diretorios no windows:
+`c:\folder\cat.jpg`
+diretorios na web:
+`path/folder/cat.jpg`
+
+## GIT
+
+- Se vc cagar e quiser trocar o remote (aka, deletou o git do heroku e teve que criar um novo)
+`PS D:\pentaword_django> git remote rm heroku      
+PS D:\pentaword_django> git remote add heroku https://git.heroku.com/novo_git_do_heroku.git
+PS D:\pentaword_django> git push heroku master`
 
 
 

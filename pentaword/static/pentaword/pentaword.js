@@ -631,5 +631,5 @@ document.addEventListener('keyup', keyPressAlpha);
 document.addEventListener("DOMContentLoaded", checkExistUserData, false);
 document.addEventListener("DOMContentLoaded", function () { setInterval(showTimerDOM, 1000) }, false);
 document.addEventListener("DOMContentLoaded", getDailyWord, false);
-document.addEventListener("DomContentLoaded", function () { addGambiarraListener('title') })
+document.addEventListener("DomContentLoaded", function () { addGambiarraListener('title_gambiarra') })
 

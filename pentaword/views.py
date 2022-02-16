@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import View
-from django.templatetags.static import static
 
 
 from pentaword import wordlist_en

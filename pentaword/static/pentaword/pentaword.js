@@ -170,7 +170,6 @@ function resetGambiarra() {
     localStorage.setItem('last_game_state', '')
     localStorage.setItem('game_state', 'active')
     window.location.reload()
-    console.log('aaaa')
 };
 
 function getKeyPress(currentKey) {
@@ -631,5 +630,5 @@ document.addEventListener('keyup', keyPressAlpha);
 document.addEventListener("DOMContentLoaded", checkExistUserData, false);
 document.addEventListener("DOMContentLoaded", function () { setInterval(showTimerDOM, 1000) }, false);
 document.addEventListener("DOMContentLoaded", getDailyWord, false);
-document.addEventListener("DomContentLoaded", function () { addGambiarraListener('title_gambiarra') })
+document.addEventListener("DOMContentLoaded", function () { addGambiarraListener('title_gambiarra') })
 

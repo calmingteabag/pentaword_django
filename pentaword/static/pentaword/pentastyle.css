@@ -590,7 +590,7 @@ div.letter_tries {
     div.letter_tries {
         gap: 2vw;
         padding-top:15vw;
-        padding-bottom:10vw;
+        padding-bottom:6vw;
     }
 }
 
@@ -660,8 +660,8 @@ span.charspan {
 
 @media only screen and (max-width: 900px) {
     div.char {
-        width: 14vw;
-        height:14vw;
+        width: 12vw;
+        height:12vw;
         font-size: 10vw;
     }
 }
@@ -691,7 +691,7 @@ div.submit_buttons {
 @media only screen and (max-width: 900px) {
     div.submit_buttons {
         padding: 5vw;
-        padding-bottom:15vw;
+        padding-bottom:10vw;
         gap:8vw;
     }
 }

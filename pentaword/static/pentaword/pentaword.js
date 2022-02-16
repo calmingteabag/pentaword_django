@@ -169,7 +169,7 @@ function saveEndGameVisuals() {
 function resetGambiarra() {
     localStorage.setItem('last_game_State', '')
     localStorage.setItem('game_state', 'active')
-    windows.location.reload()
+    window.location.reload()
 }
 
 function getKeyPress(currentKey) {

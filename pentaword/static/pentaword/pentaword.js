@@ -231,8 +231,8 @@ function helpShowStatsListener(helpStat) {
 }
 
 function addGambiarraListener(gambiarra) {
-    let gambiarrar = document.getElementById(gambiarra)
-    gambiarrar.addEventListener("click", resetGambiarra, false)
+    let gambi = document.getElementById(gambiarra)
+    gambi.addEventListener("click", function () { resetGambiarra() }, false)
 }
 
 function helpToggle(helpElement) {

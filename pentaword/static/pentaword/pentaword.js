@@ -170,7 +170,8 @@ function resetGambiarra() {
     localStorage.setItem('last_game_state', '')
     localStorage.setItem('game_state', 'active')
     window.location.reload()
-}
+    console.log('aaaa')
+};
 
 function getKeyPress(currentKey) {
     //Populates display as the user presses a key

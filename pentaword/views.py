@@ -1,8 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import View
-from django.templatetags.static import static
+from django.contrib.staticfiles import static
+
+
+from pentaword import wordlist_en
+from pentaword import wordlist_ptbr
+
+
 import datetime
 import random
+
+# solution create a py file on django with all words and import it
+# then process
 
 
 class ViewWord(View):

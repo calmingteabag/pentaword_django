@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View
-from django.contrib.staticfiles import static
+from django.templatetags.static import static
 
 
 from pentaword import wordlist_en
@@ -21,7 +21,7 @@ class ViewWord(View):
         self.currDay = int(self.time.strftime("%d"))
         self.currMonth = int(self.time.strftime("%m"))
         self.currYear = int(self.time.strftime("%Y"))
-        self.url = static('wordlist_pt.txt')
+        self.words = wordlist_ptbr.ptbr_wordlist
 
     def leapYear(self, year):
         if (year % 100 != 0) and (year % 4 == 0):
@@ -46,9 +46,9 @@ class ViewWord(View):
             return False
 
     def rand_word(self):
-        with open(self.url) as text:
-            rand_index = random.randint(0, len(text) - 1)
-            word_rand = text[rand_index]
+        words = self.words
+        rand_index = random.randint(0, len(words) - 1)
+        word_rand = words[rand_index]
 
         return word_rand
 

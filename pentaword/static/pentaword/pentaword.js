@@ -167,7 +167,7 @@ function saveEndGameVisuals() {
 // ##########################################################
 
 function resetGambiarra() {
-    localStorage.setItem('last_game_State', '')
+    localStorage.setItem('last_game_state', '')
     localStorage.setItem('game_state', 'active')
     window.location.reload()
 }

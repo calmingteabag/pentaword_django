@@ -58,25 +58,26 @@ function showTimerDOM() {
 }
 
 
-async function startCheck() {
-    // Check if game is playable
+// async function startCheck() {
+//     // Check if game is playable
 
-    let currDate = new Date()
-    let currDay = currDate.getDate()
+//     let currDate = new Date()
+//     let currDay = currDate.getDate()
 
-    await new Promise((resolve, reject) => {
+//     await new Promise((resolve, reject) => {
 
-        if ((currDate.getDate() == localStorage.getItem('nextday')) && isLastMonthDay(currDay) == false) {
-            resolve(localStorage.setItem('game_state', 'active'))
-            resolve(localStorage.setItem('last_game_state', ''))
-            resolve(localStorage.setItem('nextday', currDay++)) // needs rewrite to account for last day of the month and leap years
-        } else if ((currDate.getDate() == localStorage.getItem('nextday')) && isLastMonthDay(currDay) == true) {
-            resolve(localStorage.setItem('game_state', 'active'))
-            resolve(localStorage.setItem('last_game_state', ''))
-            resolve(localStorage.setItem('nextday', currDay = 0))
-        }
-    });
-};
+
+//         if ((currDate.getDate() == localStorage.getItem('nextday')) && isLastMonthDay(currDay) == false) {
+//             resolve(localStorage.setItem('game_state', 'active'))
+//             resolve(localStorage.setItem('last_game_state', ''))
+//             resolve(localStorage.setItem('nextday', currDay++)) // needs rewrite to account for last day of the month and leap years
+//         } else if ((currDate.getDate() == localStorage.getItem('nextday')) && isLastMonthDay(currDay) == true) {
+//             resolve(localStorage.setItem('game_state', 'active'))
+//             resolve(localStorage.setItem('last_game_state', ''))
+//             resolve(localStorage.setItem('nextday', currDay = 0))
+//         }
+//     });
+// };
 
 function createUserData() {
     // Create user Data
@@ -605,7 +606,7 @@ function randInt(start, end) {
     return num
 }
 
-document.addEventListener("DOMContentLoaded", startCheck, false);
+// document.addEventListener("DOMContentLoaded", startCheck, false);
 document.addEventListener("DOMContentLoaded", rowGlowAnimate, false);
 document.addEventListener("DOMContentLoaded", function () { addCharListener('keybutton', 'id') }, false);
 document.addEventListener("DOMContentLoaded", function () { delCharListener('del_elem') }, false);

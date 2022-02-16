@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'wordle_clone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd17gt6gqu3itrn',
         'USER': 'tiekzlyyppzefu',
         'PASSWORD': '4cf5711dbd2dc0bb3f6d7ccba23a643e2a4f6a71d2eba44483393e104151a166',

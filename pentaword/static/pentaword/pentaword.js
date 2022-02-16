@@ -166,6 +166,12 @@ function saveEndGameVisuals() {
 // #################### User Iteration ######################
 // ##########################################################
 
+function resetGambiarra() {
+    localStorage.setItem('last_game_State', '')
+    localStorage.setItem('game_state', 'active')
+    windows.location.reload()
+}
+
 function getKeyPress(currentKey) {
     //Populates display as the user presses a key
 
@@ -221,6 +227,11 @@ function helpCloseStatListener(helpElement) {
 function helpShowStatsListener(helpStat) {
     let stat_listener = document.getElementById(helpStat)
     stat_listener.addEventListener("click", function () { helpToggle('help_wrapper') }, false)
+}
+
+function addGambiarraListener(gambiarra) {
+    let gambiarrar = document.getElementById(gambiarra)
+    gambiarrar.addEventListener("click", resetGambiarra, false)
 }
 
 function helpToggle(helpElement) {
@@ -619,3 +630,5 @@ document.addEventListener('keyup', keyPressAlpha);
 document.addEventListener("DOMContentLoaded", checkExistUserData, false);
 document.addEventListener("DOMContentLoaded", function () { setInterval(showTimerDOM, 1000) }, false);
 document.addEventListener("DOMContentLoaded", getDailyWord, false);
+document.addEventListener("DomContentLoaded", function () { addGambiarraListener('title') })
+

@@ -264,16 +264,16 @@ function statToggle(toggleElement) {
 function showStat(statElement) {
     // When user clicks on (i) populates it with current statistics
     let show_stat = document.getElementById(statElement)
-    let hide_word = document.getElementById('daily_word')
+    // let hide_word = document.getElementById('daily_word')
     populateInfo()
 
     show_stat.style.visibility = 'visible'
 
-    if (show_stat.style.visibility == 'visible' && localStorage.getItem('playedGames') == '0') {
-        hide_word.style.opacity = '0'
-    } else if (show_stat.style.visibility == 'visible' && localStorage.getItem('game_state') == 'active') {
-        hide_word.style.opacity = '0'
-    }
+    // if (show_stat.style.visibility == 'visible' && localStorage.getItem('playedGames') == '0') {
+    //     hide_word.style.opacity = '0'
+    // } else if (show_stat.style.visibility == 'visible' && localStorage.getItem('game_state') == 'active') {
+    //     hide_word.style.opacity = '0'
+    // }
 }
 
 function closeStat(statElement) {

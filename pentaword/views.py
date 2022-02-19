@@ -1,11 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View
-
-
-from pentaword import wordlist_en
 from pentaword import wordlist_ptbr
-
-
 import datetime
 import random
 
@@ -14,6 +9,8 @@ import random
 
 
 class ViewWord(View):
+    # Class was made to work if I could get some function to execute
+    # daily.
     def __init__(self):
         self.future_date = ''
         self.time = datetime.datetime.now()
@@ -79,3 +76,21 @@ class ViewWord(View):
             dailyword = self.rand_word()
             contextstuff = {'dailyword': dailyword}
             return render(request, 'pentaword/pentaword.html', contextstuff)
+
+
+class GambiarraWord(View):
+    # Made this workaround class so the program will work without timer
+    def __init__(self):
+        self.words = wordlist_ptbr.ptbr_wordlist
+
+    def rand_word(self):
+        words = self.words
+        rand_index = random.randint(0, len(words) - 1)
+        word_rand = words[rand_index]
+
+        return word_rand
+
+    def get(self, request):
+        dailyword = self.rand_word()
+        contextstuff = {'dailyword': dailyword}
+        return render(request, 'pentaword/pentaword.html', contextstuff)

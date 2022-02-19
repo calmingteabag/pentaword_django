@@ -2,6 +2,7 @@
 // ################## Game Initialization ###################
 // ##########################################################
 
+
 // item_pos tracks the char position on a row
 // active_row tracks which row is being filled
 let item_pos = 0;
@@ -28,7 +29,6 @@ async function rowGlowAnimate() {
     }
 };
 
-
 function currentTime() {
     // Get current date
     let fullDate = new Date();
@@ -36,7 +36,6 @@ function currentTime() {
 
     return currTime
 }
-
 
 function showTimerDOM() {
     // Show remaining time to next game
@@ -56,7 +55,6 @@ function showTimerDOM() {
 
     document.getElementById('countdown').innerHTML = fullcountdown
 }
-
 
 // async function startCheck() {
 //     // Check if game is playable
@@ -105,7 +103,6 @@ function createUserData() {
     }
 }
 
-
 async function checkExistUserData() {
     // Check if user exists
     // Create new if not, retrieve last game stat to show if yes
@@ -137,12 +134,10 @@ async function checkExistUserData() {
     }
 }
 
-
 function updateUserData(storageItem, value) {
     // Update user data
     localStorage.setItem(storageItem, value)
 }
-
 
 function saveEndGameVisuals() {
     // Saves current 'state' of the game after game has ended, which means
@@ -160,7 +155,6 @@ function saveEndGameVisuals() {
     let jsonier = JSON.stringify(letterVisualsObj)
     localStorage.setItem('last_game_state', jsonier)
 }
-
 
 // ##########################################################
 // #################### User Iteration ######################
@@ -188,7 +182,6 @@ function getKeyPress(currentKey) {
         arr.push(current_char)
     }
 };
-
 
 function addCharListener(classname, atrib) {
     let btn_elem = document.getElementsByClassName(classname)
@@ -281,7 +274,6 @@ function showStat(statElement) {
     } else if (show_stat.style.visibility == 'visible' && localStorage.getItem('game_state') == 'active') {
         hide_word.style.opacity = '0'
     }
-
 }
 
 function closeStat(statElement) {
@@ -486,11 +478,8 @@ function subWord() {
         document.getElementById('score_wrapper').style.borderColor = 'red'
         document.getElementById('score_title').style.color = 'red'
         document.getElementById('score_title').innerHTML = 'Try again tomorrow'
-
-
     }
 };
-
 
 function checkWord() {
     // To declutter a bit of the subWord() function, did a separate one
@@ -559,7 +548,6 @@ function isLastMonthDay(day) {
 }
 // if returns true, means its last day, so target variable should be set to 0
 
-
 function leapYear(year) {
     if ((!year % 100) && (year % 4 == 0)) {
         return true
@@ -579,7 +567,6 @@ function leadZerotime(zeroes) {
     }
 }
 
-
 function isAlpha(word) {
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -591,7 +578,6 @@ function isAlpha(word) {
         }
     }
 };
-
 
 function compareArr(arr_a, arr_b) {
     let iter = 0

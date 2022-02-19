@@ -25,7 +25,13 @@ div.main_window {
         height: 100%;
     }
 }
+
+div.help_overlay_main {
+    height: 70%
+}
 div.help_overlay_wrapper {
+    display:flex;
+    flex-direction: column;
     height: 70vh;
     width: 50vw;
     position: fixed;
@@ -53,7 +59,7 @@ div.score_overlay_main {
 div.help_title {
     display: flex;
     height: 10%;
-    padding: 0px;
+    padding: 1vw;
     margin: 0px;
     border:0px;
     color:rgb(255, 42, 184);
@@ -110,7 +116,7 @@ div.help_info {
         flex-direction: column;
         align-items: left;
         justify-content: left;
-        font-size: 4vw;
+        font-size: 3.7vw;
         gap: 1.5vw;
         padding-top:2vw;
         padding-bottom: 2vw;
@@ -123,11 +129,12 @@ div.help_examples {
     flex-direction: column;
     padding-top: 1.5vw;
     padding-bottom: 1.5vw;
-    gap:0.2vw;
+    gap:0.5vw;
 }
 
 @media only screen and (max-width: 900px) {
     div.help_examples {
+        padding-top: 7vw;
         gap: 1.5vw;
     }
 }
@@ -157,7 +164,7 @@ div.help_description {
 
 @media only screen and (max-width: 900px) {
     div.help_description {
-        font-size: 4.3vw;
+        font-size: 3.7vw;
     }
 }
 
@@ -192,14 +199,18 @@ div.help_credits {
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    height:20%;
     font-size: 0.9vw;
     padding-left:1vw;
     padding-right:1vw;
+    border-top-width:1px;
+    border-top-style: solid;
+    border-color: rgb(151, 56, 159);
 }
 
 @media only screen and (max-width: 900px) {
     div.help_credits {
-        font-size: 4.3vw;
+        font-size: 3.7vw;
         padding-left:5vw;
         padding-right:5vw;
     }
@@ -594,8 +605,8 @@ div.letter_tries {
 @media only screen and (max-width: 900px) {
     div.letter_tries {
         gap: 2vw;
-        padding-top:15vw;
-        padding-bottom:6vw;
+        padding-top:8vw;
+        padding-bottom:4vw;
     }
 }
 
@@ -665,9 +676,9 @@ span.charspan {
 
 @media only screen and (max-width: 900px) {
     div.char {
-        width: 12vw;
-        height:12vw;
-        font-size: 10vw;
+        width: 10vw;
+        height:10vw;
+        font-size: 6vw;
     }
 }
 
@@ -695,8 +706,8 @@ div.submit_buttons {
 
 @media only screen and (max-width: 900px) {
     div.submit_buttons {
-        padding: 5vw;
-        padding-bottom:10vw;
+        padding-top: 3vw;
+        padding-bottom:5vw;
         gap:8vw;
     }
 }
@@ -717,9 +728,9 @@ button.subbutton {
 
 @media only screen and (max-width: 900px) {
     button.subbutton {
-        width: 30vw;
-        height: 10vw;
-        font-size: 5.5vw;
+        width: 25vw;
+        height: 7vw;
+        font-size: 4vw;
     }
 }
 
